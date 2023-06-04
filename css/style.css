@@ -121,6 +121,45 @@ body {
 }
 
 /* *************************** */
+/* Navigation */
+/* *************************** */
+
+.main-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--grey333);
+  transition: all 0.2s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: var(--main-shade10);
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  background-color: var(--main-color);
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: var(--main-shade10);
+}
+
+/* *************************** */
 /* Hero section */
 /* *************************** */
 
