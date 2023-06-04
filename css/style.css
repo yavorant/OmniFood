@@ -2,7 +2,11 @@
 --- 01 Typography:
 
 FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+px:  |  10   |   12   |  14   | 16 |   18   |  20   |  24 |  30   |
+rem: | 0.625 |	0.75	| 0.875 |	 1 |	1.125 |	1.25	| 1.5	| 1.875 |
+
+px:  |   36  |   44   |  52   |  62   |   74  |  86   |  98   |
+rem: |	2.25 |	2.75	| 3.25	| 3.875 |	4.625 |	5.375 |	6.125 |
 
 Font weights:
 default: 400
@@ -11,16 +15,28 @@ Line heights:
 default: 1
 
 
---- 02 Colors
-- primary: #e67e22
-- grey555: #555;
+--- 02 Colors:
+--main: #e67e22;
+--main-shade10: #cf711f;
+--main-tint10: #e98b38;
+--main-tint90: #fdf2e9;
+
+--grey555: #555;
+--grey333: #333;
+
 
 --- 03 Spacing system:
 
 SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+px:  |   2	 |   4	 |   8  |  12  | 16 |
+rem: | 0.125 |	0.25 |	0.5 | 0.75 |  1 |
+
+px:  |  24  | 32  | 48 | 64 | 80 | 96 | 128 |
+rem: |  1.5 |  2  |  3 |  4 |  5 |  6 |  8  |
+
 
 */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 * {
   padding: 0;
@@ -28,9 +44,127 @@ SPACING SYSTEM (px)
   box-sizing: border-box;
 }
 
+html {
+  --main-color: #e67e22;
+  --main-tint90: #fdf2e9;
+  --main-shade10: #cf711f;
+  --white: #fff;
+  --grey555: #555;
+  --grey333: #333;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #555;
+  color: var(--grey555);
+}
+
+.hero {
+  background-color: var(--main-tint90);
+  padding: 6rem 0;
+}
+
+.hero-container {
+  max-width: 81.25rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.hero-heading {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: var(--grey333);
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+/* LoVeHAte */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  /* Add transition to original state: */
+  /* transition: all 1s; */
+  transition: background-color 0.2s;
+}
+
+.btn--cta:link,
+.btn--cta:visited {
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+.btn--cta:hover,
+.btn--cta:active {
+  background-color: var(--main-shade10);
+  color: var(--white);
+}
+
+.btn--secondary:link,
+.btn--secondary:visited {
+  background-color: var(--white);
+  color: var(--grey555);
+}
+
+.btn--secondary:hover,
+.btn--secondary:active {
+  background-color: var(--main-tint90);
+  color: var(--grey555);
+  /* Trick to add border inside, not afect item around while hovering: */
+  box-shadow: inset 0 0 0 3px var(--white);
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.margin-right-sm {
+  margin-right: 1rem !important;
+}
+
+.delivered {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: -1rem;
+  border: 3px solid var(--main-tint90);
+}
+
+.delivered-img:last-of-type {
+  margin-right: 0;
+}
+
+.delivered-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.delivered-text strong {
+  color: var(--main-shade10);
 }
