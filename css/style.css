@@ -59,6 +59,28 @@ body {
 /* General Components */
 /* *************************** */
 
+.container {
+  max-width: 75rem; /*1200px*/
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 6rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* LoVeHAte */
 .btn:link,
 .btn:visited {
@@ -227,4 +249,31 @@ body {
 
 .delivered-text strong {
   color: var(--main-shade10);
+}
+
+/* *************************** */
+/* How it works section */
+/* *************************** */
+
+.section-how {
+  padding: 6rem 0;
+  background-color: tomato;
+}
+
+.section-how article:nth-child(1) {
+  background-color: red;
+}
+.section-how article:nth-child(2) {
+  background-color: green;
+}
+.section-how article:nth-child(3) {
+  background-color: blue;
+}
+.section-how article:nth-child(4) {
+  background-color: orange;
+}
+
+.section-how article {
+  padding: 6.5rem;
+  font-size: 3rem;
 }
