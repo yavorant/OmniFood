@@ -16,9 +16,11 @@ Line heights: default: 1
 --main: #e67e22;
 --main-shade10: #cf711f;
 --main-tint10: #e98b38;
+--main-tint80: #fae5d3;
 --main-tint90: #fdf2e9;
 --grey555: #555;
 --grey333: #333;
+--grey-ddd: #ddd;
 
 --- 03 Spacing system:
 
@@ -41,11 +43,13 @@ rem: |  1.5 |  2  |  3 |  4 |  5 |  6 |  8  |
 
 html {
   --main-color: #e67e22;
+  --main-tint80: #fae5d3;
   --main-tint90: #fdf2e9;
   --main-shade10: #cf711f;
   --white: #fff;
   --grey555: #555;
   --grey333: #333;
+  --grey-ddd: #ddd;
 }
 
 body {
@@ -67,8 +71,12 @@ body {
 
 .grid {
   display: grid;
-  gap: 6rem;
-  grid-template-columns: repeat(2, 1fr);
+  row-gap: 6rem;
+  column-gap: 4rem;
+}
+
+.grid--center-vert {
+  align-items: center;
 }
 
 .grid--2-cols {
@@ -79,6 +87,41 @@ body {
 }
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--grey333);
+}
+
+.heading-primary {
+  font-size: 3.25rem;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.heading-secondary {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  margin-bottom: 6rem;
+}
+
+.heading-tertiary {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--main-shade10);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.75px;
 }
 
 /* LoVeHAte */
@@ -200,15 +243,6 @@ body {
   align-items: center;
 }
 
-.hero-heading {
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.5px;
-  color: var(--grey333);
-  margin-bottom: 2rem;
-}
-
 .hero-description {
   font-size: 1.25rem;
   line-height: 1.5;
@@ -257,23 +291,60 @@ body {
 
 .section-how {
   padding: 6rem 0;
-  background-color: tomato;
 }
 
-.section-how article:nth-child(1) {
-  background-color: red;
-}
-.section-how article:nth-child(2) {
-  background-color: green;
-}
-.section-how article:nth-child(3) {
-  background-color: blue;
-}
-.section-how article:nth-child(4) {
-  background-color: orange;
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.section-how article {
-  padding: 6.5rem;
-  font-size: 3rem;
+.step-img-box::before,
+.step-img-box::after {
+  content: '';
+  display: block;
+  /* center it: */
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; doesn't work so,*/
+  /* we use padding: */
+  padding-bottom: 60%;
+  background-color: var(--main-tint90);
+  z-index: -2;
+}
+
+.step-img-box::after {
+  width: 48%;
+  /* height: 60%; doesn't work so,*/
+  /* we use padding: */
+  padding-bottom: 48%;
+  background-color: var(--main-tint80);
+  z-index: -1;
+}
+
+.step-img {
+  width: 35%;
+}
+
+.step-text-box {
+}
+
+.step-number {
+  font-size: 5.375rem;
+  font-weight: 600;
+  color: var(--grey-ddd);
+  margin-bottom: 0.75rem;
+}
+
+.step-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
