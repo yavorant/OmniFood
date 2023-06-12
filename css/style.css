@@ -379,3 +379,33 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
 }
+
+/* *************************** */
+/* Meals section */
+/* *************************** */
+
+.section-meals {
+  padding: 6rem 0;
+}
+
+.meal-title {
+  font-size: 1.5rem;
+  color: var(--grey333);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.meal-attribute {
+  font-size: 1.125rem;
+}
+
+.meal-img {
+  width: 100%;
+}
